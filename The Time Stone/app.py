@@ -61,6 +61,10 @@ def get_movies():
     
     return jsonify([dict(row) for row in movies])
 
+@app.route('/api/goodforyou', methods=['POST'])
+def goodforyou():
+    return "Gotcha"
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -72,4 +76,4 @@ def timeStone():
 if __name__ == '__main__':
     create_random_table()
 
-    app.run(debug=True)
+    app.run(host="0.0.0.0",port=80,debug=False)
